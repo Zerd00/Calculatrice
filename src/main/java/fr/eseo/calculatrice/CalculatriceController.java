@@ -3,7 +3,7 @@ package fr.eseo.calculatrice;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class CalculatriceController {
     @FXML
     private Label welcomeText;
 
