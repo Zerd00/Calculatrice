@@ -35,10 +35,10 @@ public class CalculatriceController implements PropertyChangeListener {
 
     }
     public void soustractionBouton(MouseEvent mouseEvent) {
-        model.operation(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
+        model.soustraction(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
 
     }
     public void multiplicationBouton(MouseEvent mouseEvent) {
-        model.operation(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
+        model.multiplication(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
     }
 }
