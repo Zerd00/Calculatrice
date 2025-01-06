@@ -38,23 +38,23 @@ public class CalculatriceModel {
     public void setResultat(int resultat) {
         this.resultat = resultat;
     }
-    public int operation(int nombre1, int nombre2) {
-        resultat = nombre1 + nombre2 ;
+    public void operation(int nombre1, int nombre2) {
+        this.resultat = nombre1 + nombre2 ;
         changeSupport.firePropertyChange("operation", nombre1, nombre2);
-        return resultat;
+
 
     }
 
-    public int soustraction(int nombre1, int nombre2) {
-        resultat = nombre1 - nombre2;
+    public void soustraction(int nombre1, int nombre2) {
+        this.resultat = nombre1 - nombre2;
         changeSupport.firePropertyChange("soustraction", nombre1, nombre2);
-        return resultat;
+
     }
 
-    public int multiplication(int nombre1, int nombre2) {
-        resultat = nombre1 * nombre2;
+    public void multiplication(int nombre1, int nombre2) {
+        this.resultat = nombre1 * nombre2;
         changeSupport.firePropertyChange("multiplication", nombre1, nombre2);
-        return resultat;
+
     }
 
     public  void addPropertyChangeListener(PropertyChangeListener listener) {
