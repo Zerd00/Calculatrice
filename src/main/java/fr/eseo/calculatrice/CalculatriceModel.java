@@ -57,7 +57,9 @@ public class CalculatriceModel {
         changeSupport.addPropertyChangeListener(listener);
     }
 
-    public String tostring () {
+
+    @Override
+    public String toString () {
         return String.valueOf(resultat);
     }
 
