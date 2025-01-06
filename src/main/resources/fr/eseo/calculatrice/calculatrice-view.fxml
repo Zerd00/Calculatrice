@@ -27,8 +27,8 @@
                 <Button text=" * " onMouseClicked="#multiplicationBouton"/>
             </HBox>
 
-            <Label text="Résultat"/>
-            <Label fx:id="Result" style="-fx-font-size: 25"/>
+            <Label text="Résultat :"/>
+            <Label text="0" fx:id="Result" style="-fx-font-size: 25"/>
         </VBox>
     </center>
 
