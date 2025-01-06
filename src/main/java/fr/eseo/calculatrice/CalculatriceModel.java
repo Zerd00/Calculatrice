@@ -38,16 +38,19 @@ public class CalculatriceModel {
     public void setResultat(int resultat) {
         this.resultat = resultat;
     }
-    public void operation(int nombre1, int nombre2) {
+    public int operation(int nombre1, int nombre2) {
         resultat = nombre1 + nombre2 ;
+        return resultat;
     }
 
-    public void soustraction(int nombre1, int nombre2) {
+    public int soustraction(int nombre1, int nombre2) {
         resultat = nombre1 - nombre2;
+        return resultat;
     }
 
-    public void multiplication(int nombre1, int nombre2) {
+    public int multiplication(int nombre1, int nombre2) {
         resultat = nombre1 * nombre2;
+        return resultat;
     }
 
     public  void addPropertyChangeListener(PropertyChangeListener listener) {
