@@ -22,9 +22,9 @@
             <TextField fx:id="num2"/>
 
             <HBox>
-                <Button text="+" onMouseClicked="#additionBouton"/>
-                <Button text="-" onMouseClicked="#soustractionBouton"/>
-                <Button text="*" onMouseClicked="#multiplicationBouton"/>
+                <Button text=" + " onMouseClicked="#additionBouton"/>
+                <Button text=" - " onMouseClicked="#soustractionBouton"/>
+                <Button text=" * " onMouseClicked="#multiplicationBouton"/>
             </HBox>
 
             <Label text="Résultat"/>
