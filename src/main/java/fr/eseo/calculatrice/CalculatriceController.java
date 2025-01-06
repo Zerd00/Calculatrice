@@ -23,15 +23,17 @@ public class CalculatriceController implements PropertyChangeListener {
 
     public void initialize() {
         model = new CalculatriceModel();
+        model.addPropertyChangeListener(this);
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        Result.setText(model.toString());
+        Result.setText(String.valueOf(evt.getNewValue()));
     }
 
     public void additionBouton(MouseEvent mouseEvent) {
         model.operation(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
+        System.out.println(model.getResultat());
 
     }
     public void soustractionBouton(MouseEvent mouseEvent) {
