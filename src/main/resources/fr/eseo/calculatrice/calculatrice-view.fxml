@@ -19,11 +19,10 @@
             <Label text="Number 1:"/>
             <TextField fx:id="num1"/>
 
-            <Label text="Number 2:"/>
-            <TextField fx:id="num2"/>
 
             <GridPane hgap="5" vgap="5" alignment="center">
 
+                <Button text="7" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
                 <Button text="8" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
                 <Button text="9" onMouseClicked="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
 
