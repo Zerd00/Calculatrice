@@ -41,30 +41,30 @@ public class CalculatriceModel {
     public void setResultat(int resultat) {
         this.resultat = resultat;
     }
-    public void operation(int nombre1, int nombre2) {
-        int resultat = this.resultat;
-        this.resultat = nombre1 + nombre2  ;
-        changeSupport.firePropertyChange("operation", resultat, this.resultat);
+    public void calculer(int nombre1, int nombre2, String operator) {
+        int oldResultat = this.resultat;
 
-
-    }
-
-    public void soustraction(int nombre1, int nombre2) {
-        int resultat = this.resultat;
-        this.resultat = nombre1 - nombre2;
-        changeSupport.firePropertyChange("soustraction", resultat, this.resultat);
-
-    }
-
-    public void multiplication(int nombre1, int nombre2) {
-        int resultat = this.resultat;
-        this.resultat = nombre1 * nombre2;
-        changeSupport.firePropertyChange("multiplication", resultat, this.resultat);
-
+        switch (operator) {
+            case "+":
+                this.resultat = nombre1 + nombre2;
+                break;
+            case "-":
+                this.resultat = nombre1 - nombre2;
+                break;
+            case "*":
+                this.resultat = nombre1 * nombre2;
+                break;
+            default:
+                throw new IllegalArgumentException("Opérateur non pris en charge : " + operator);
+        }
+        changeSupport.firePropertyChange("resultat", oldResultat, this.resultat);
     }
 
     public  void addPropertyChangeListener(PropertyChangeListener listener) {
         changeSupport.addPropertyChangeListener(listener);
+    }
+    public  void removePropertyChangeListener(PropertyChangeListener listener) {
+        changeSupport.removePropertyChangeListener(listener);
     }
 
 

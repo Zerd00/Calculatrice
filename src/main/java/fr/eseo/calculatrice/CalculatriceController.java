@@ -1,62 +1,76 @@
 package fr.eseo.calculatrice;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
-import java.awt.event.ActionEvent;
+import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 public class CalculatriceController implements PropertyChangeListener {
-    @FXML
-    private TextField num1;
 
     @FXML
-    private TextField num2;
-
-
-
-    @FXML
-    private Label Result;
+    private TextField display;
 
     private CalculatriceModel model;
+    private String currentInput = "";
+    private String operator = "";
+    private int firstOperand = 0;
 
     public void initialize() {
+        System.out.println(display);
         model = new CalculatriceModel();
         model.addPropertyChangeListener(this);
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        Result.setText(String.valueOf(evt.getNewValue()));
+        if ("resultat".equals(evt.getPropertyName())) {
+            display.setText(String.valueOf(evt.getNewValue()));
+        }
     }
-
-    public void additionBouton(MouseEvent mouseEvent) {
-        model.operation(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
-        System.out.println(model.getResultat());
-
-    }
-    public void soustractionBouton(MouseEvent mouseEvent) {
-        model.soustraction(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
-
-    }
-    public void multiplicationBouton(MouseEvent mouseEvent) {
-        model.multiplication(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
-    }
-
 
     public void handleButtonClick(MouseEvent mouseEvent) {
+        String buttonText = ((javafx.scene.control.Button) mouseEvent.getSource()).getText();
 
+        if ("+-*".contains(buttonText)) {
+            // Si un opérateur est cliqué
+            if (!currentInput.isEmpty()) {
+                firstOperand = Integer.parseInt(currentInput);
+                operator = buttonText;
+                currentInput = ""; // Prépare pour le prochain opérande
+                display.setText(operator); // Affiche temporairement l'opérateur
+            }
+        } else {
+            // Si un chiffre est cliqué
+            currentInput += buttonText;
+            display.setText(currentInput); // Met à jour l'affichage avec l'entrée
+        }
     }
 
-    public void handleClear(MouseEvent mouseEvent) {
-
-    }
-
+    /**
+     * Gère le clic sur le bouton "=".
+     */
     public void handleEqual(MouseEvent mouseEvent) {
+        if (!operator.isEmpty() && !currentInput.isEmpty()) {
+            int secondOperand = Integer.parseInt(currentInput);
+            model.calculer(firstOperand, secondOperand, operator);
 
+            // Met à jour l'entrée et l'opérande pour continuer à calculer si nécessaire
+            currentInput = String.valueOf(model.getResultat());
+            operator = "";
+            firstOperand = model.getResultat();
+        }
+    }
+
+    /**
+     * Gère le clic sur le bouton "C" pour réinitialiser la calculatrice.
+     */
+    public void handleClear(MouseEvent mouseEvent) {
+        currentInput = "";
+        operator = "";
+        firstOperand = 0;
+        display.setText("0"); // Réinitialise l'affichage
     }
 }
