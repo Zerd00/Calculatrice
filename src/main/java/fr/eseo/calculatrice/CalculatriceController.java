@@ -48,15 +48,15 @@ public class CalculatriceController implements PropertyChangeListener {
     }
 
 
-    public void handleButtonAction(ActionEvent actionEvent) {
+    public void handleButtonClick(MouseEvent mouseEvent) {
 
     }
 
-    public void handleEqual(ActionEvent actionEvent) {
+    public void handleClear(MouseEvent mouseEvent) {
 
     }
 
-    public void handleClear(ActionEvent actionEvent) {
+    public void handleEqual(MouseEvent mouseEvent) {
 
     }
 }
