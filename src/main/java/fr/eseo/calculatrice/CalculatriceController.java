@@ -6,6 +6,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
+import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -15,6 +16,8 @@ public class CalculatriceController implements PropertyChangeListener {
 
     @FXML
     private TextField num2;
+
+
 
     @FXML
     private Label Result;
@@ -42,5 +45,18 @@ public class CalculatriceController implements PropertyChangeListener {
     }
     public void multiplicationBouton(MouseEvent mouseEvent) {
         model.multiplication(Integer.parseInt(num1.getText()),Integer.parseInt(num2.getText()));
+    }
+
+
+    public void handleButtonAction(ActionEvent actionEvent) {
+
+    }
+
+    public void handleEqual(ActionEvent actionEvent) {
+
+    }
+
+    public void handleClear(ActionEvent actionEvent) {
+
     }
 }

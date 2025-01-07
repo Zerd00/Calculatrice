@@ -1,8 +1,11 @@
 package fr.eseo.calculatrice;
 
+import javax.naming.PartialResultException;
 import java.beans.PropertyChangeSupport;
 import java.beans.PropertyChangeListener;
 import java.io.File;
+import java.util.List;
+
 public class CalculatriceModel {
 
     private int nombre1;
@@ -40,7 +43,7 @@ public class CalculatriceModel {
     }
     public void operation(int nombre1, int nombre2) {
         int resultat = this.resultat;
-        this.resultat = nombre1 + nombre2 ;
+        this.resultat = nombre1 + nombre2  ;
         changeSupport.firePropertyChange("operation", resultat, this.resultat);
 
 
