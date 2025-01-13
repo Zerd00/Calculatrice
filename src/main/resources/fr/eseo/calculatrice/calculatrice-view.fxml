@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TextField?>
@@ -10,26 +11,27 @@
 
     <TextField fx:id="display" editable="false" style="-fx-font-size: 18; -fx-alignment: center-right;" maxWidth="250"/>
 
-    <GridPane hgap="5" vgap="5" alignment="center">
+    <GridPane hgap="2" vgap="2" alignment="center">
 
-        <Button text="7" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-        <Button text="8" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-        <Button text="9" onMouseClicked="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+        <Button text="7" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="40" prefHeight="40"/>
+        <Button text="8" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="40" prefHeight="40"/>
+        <Button text="9" onMouseClicked="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="0" prefWidth="40" prefHeight="40"/>
+        <Button text="*" onMouseClicked="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="0" prefWidth="40" prefHeight="40"/>
 
-        <Button text="4" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <Button text="5" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <Button text="6" onMouseClicked="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-        <Button text="*" onMouseClicked="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+        <Button text="4" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="1" prefWidth="40" prefHeight="40"/>
+        <Button text="5" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="1" prefWidth="40" prefHeight="40"/>
+        <Button text="6" onMouseClicked="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="1" prefWidth="40" prefHeight="40"/>
+        <Button text="-" onMouseClicked="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="1" prefWidth="40" prefHeight="40"/>
 
-        <Button text="1" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-        <Button text="2" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-        <Button text="3" onMouseClicked="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-        <Button text="-" onMouseClicked="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+        <Button text="1" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="2" prefWidth="40" prefHeight="40"/>
+        <Button text="2" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="2" prefWidth="40" prefHeight="40"/>
+        <Button text="3" onMouseClicked="#handleButtonClick" GridPane.columnIndex="2" GridPane.rowIndex="2" prefWidth="40" prefHeight="40"/>
+        <Button text="+" onMouseClicked="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="2" prefWidth="40" prefHeight="40"/>
 
-        <Button text="0" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-        <Button text="C" onMouseClicked="#handleClear" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
-        <Button text="=" onMouseClicked="#handleEqual" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
-        <Button text="+" onMouseClicked="#handleButtonClick" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+        <Button text="0" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="3" prefWidth="40" prefHeight="40"/>
+        <Button text="C" onMouseClicked="#handleClear" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="40" prefHeight="40"/>
+        <Button text="=" onMouseClicked="#handleEqual" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="40" prefHeight="40"  style="-fx-background-color: #dd1313;"/>
+
     </GridPane>
 
 </VBox>

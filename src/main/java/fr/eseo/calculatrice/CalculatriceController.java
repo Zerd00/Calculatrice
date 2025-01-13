@@ -37,17 +37,15 @@ public class CalculatriceController implements PropertyChangeListener {
         String buttonText = ((javafx.scene.control.Button) mouseEvent.getSource()).getText();
 
         if ("+-*".contains(buttonText)) {
-            // Si un opérateur est cliqué
             if (!currentInput.isEmpty()) {
                 firstOperand = Integer.parseInt(currentInput);
                 operator = buttonText;
-                currentInput = ""; // Prépare pour le prochain opérande
-                display.setText(operator); // Affiche temporairement l'opérateur
+                currentInput = "";
+                display.setText(operator);
             }
         } else {
-            // Si un chiffre est cliqué
             currentInput += buttonText;
-            display.setText(currentInput); // Met à jour l'affichage avec l'entrée
+            display.setText(currentInput);
         }
     }
 
@@ -59,7 +57,6 @@ public class CalculatriceController implements PropertyChangeListener {
             int secondOperand = Integer.parseInt(currentInput);
             model.calculer(firstOperand, secondOperand, operator);
 
-            // Met à jour l'entrée et l'opérande pour continuer à calculer si nécessaire
             currentInput = String.valueOf(model.getResultat());
             operator = "";
             firstOperand = model.getResultat();
@@ -73,6 +70,6 @@ public class CalculatriceController implements PropertyChangeListener {
         currentInput = "";
         operator = "";
         firstOperand = 0;
-        display.setText("0"); // Réinitialise l'affichage
+        display.setText("0");
     }
 }
