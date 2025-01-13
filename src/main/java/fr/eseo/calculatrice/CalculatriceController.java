@@ -1,10 +1,10 @@
 package fr.eseo.calculatrice;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
 import javafx.scene.input.MouseEvent;
 
-import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
@@ -18,11 +18,13 @@ public class CalculatriceController implements PropertyChangeListener {
     private String operator = "";
     private int firstOperand = 0;
 
+
     public void initialize() {
         System.out.println(display);
         model = new CalculatriceModel();
         model.addPropertyChangeListener(this);
     }
+
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
