@@ -30,7 +30,7 @@
 
         <Button text="0" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="3" prefWidth="40" prefHeight="40"/>
         <Button text="C" onMouseClicked="#handleClear" GridPane.columnIndex="1" GridPane.rowIndex="3" prefWidth="40" prefHeight="40"/>
-        <Button text="=" onMouseClicked="#handleEqual" GridPane.columnIndex="3" GridPane.rowIndex="3" prefWidth="40" prefHeight="40"  style="-fx-background-color: #dd1313;"/>
+        <Button text="=" onMouseClicked="#handleEqual" GridPane.columnIndex="2" GridPane.rowIndex="3" GridPane.columnSpan="2" prefWidth="80" prefHeight="40" style="-fx-background-color: #dd1313; -fx-text-fill: white;"/>
 
     </GridPane>
 
