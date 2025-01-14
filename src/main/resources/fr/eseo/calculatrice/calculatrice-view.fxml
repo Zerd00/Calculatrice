@@ -4,14 +4,14 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Button?>
-<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="fr.eseo.calculatrice.CalculatriceController">
+<VBox spacing="10" alignment="CENTER" xmlns:fx="http://javafx.com/fxml" fx:controller="fr.eseo.calculatrice.CalculatriceController">
     <padding>
         <Insets top="10" right="10" bottom="10" left="10"/>
     </padding>
 
     <TextField fx:id="display" editable="false" style="-fx-font-size: 18; -fx-alignment: center-right;" maxWidth="250"/>
 
-    <GridPane hgap="2" vgap="2" alignment="center">
+    <GridPane hgap="3" vgap="3" alignment="center">
 
         <Button text="7" onMouseClicked="#handleButtonClick" GridPane.columnIndex="0" GridPane.rowIndex="0" prefWidth="40" prefHeight="40"/>
         <Button text="8" onMouseClicked="#handleButtonClick" GridPane.columnIndex="1" GridPane.rowIndex="0" prefWidth="40" prefHeight="40"/>
